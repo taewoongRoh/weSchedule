@@ -1,0 +1,87 @@
+<div ui-content-for="title">
+  <span>일정 관리</span>
+</div>
+
+<div ui-content-for="modals">
+<button id="modal_insert" ui-turn-on="modal_insert" class="btn btn-primary" style="display:none;">모달</button>
+  <div class="modal" ui-if="modal_insert" ui-state='modal_insert'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="modal_insert">&times;</button>
+          <h4 class="modal-title">일정 등록</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+			<div class="input_group date_form">
+			<label> 제목 </label> <input class="form-control" type="text" id="title" required="" />
+			</div>
+
+        	<div class="input_group date_form">
+          	<label>시작 날짜 </label><input class="input_date form-control" type="text" readonly="" id="start" /><input class="input_time form-control" type="time" id="startTime" value="10:00"/>
+			</div>
+			<div class="input_group date_form">
+          	<label>종료 날짜</label><input class="input_date form-control" type="text" readonly="" id="end" /><input class="input_time form-control" type="time" id="endTime" value="00:00"/>
+			</div>
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="modal_insert" class="btn btn-default">취소</button>
+          <button type="submit" ui-turn-off="modal_insert" class="btn btn-primary" ng-click="ScheduleInsert();">등록</button>
+          <form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+  <!-- 모달 경계선 -->
+
+  <button id="modal_info" ui-turn-on="modal_info" class="btn btn-primary" style="display:none;">모달</button>
+  <div class="modal" ui-if="modal_info" ui-state='modal_info'>
+    <div class="modal-backdrop in"></div>
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button class="close" 
+                  ui-turn-off="modal_info">&times;</button>
+          <h4 class="modal-title">일정 정보</h4>
+        </div>
+        <div class="modal-body">
+        <form>
+			<div class="input_group date_form">
+			<label> 제목 </label> <input class="form-control" type="text" id="title" required="" />
+			</div>
+
+        	<div class="input_group date_form">
+          	<label>시작 날짜 </label><input class="input_date form-control" type="text" readonly="" id="start" /><input class="input_time form-control" type="time" id="startTime" value="10:00"/>
+			</div>
+			<div class="input_group date_form">
+          	<label>종료 날짜</label><input class="input_date form-control" type="text" readonly="" id="end" /><input class="input_time form-control" type="time" id="endTime" value="00:00"/>
+			</div>
+        </div>
+        <div class="modal-footer">
+          <button ui-turn-off="modal_info" class="btn btn-default">취소</button>
+           <button class="btn btn-danger" ng-click="ScheduleDelete();">삭제</button>
+          <button ui-turn-off="modal_info" class="btn btn-primary" ng-click="ScheduleUpdate();">수정</button>
+          <form>
+        </div>
+      </div>
+    </div>
+  </div> 
+
+</div>
+
+
+
+<!--<div class="scrollable">  
+    <div class="scrollable-content"><-->
+        <div class='section'> 
+            
+       <div id="calendar" style="background-color:white;"></div>
+        </div>
+
+<!--
+    </div>
+</div>
+-->

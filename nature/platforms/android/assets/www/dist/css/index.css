@@ -1,0 +1,35 @@
+.navbar-app {
+	 background:url(../img/Hydrangeas.jpg);
+	 color:white; 
+}
+
+.alarmSection p, .alarmSection h1 {
+display:inline-block;
+}
+
+.alarmSection .form-group {
+float:right;
+}
+
+.date_form label {
+display:block;
+width:70px;
+}
+.date_form {
+margin-bottom:15px;
+}
+
+.input_date {
+display:inline;
+width:40%;
+}
+
+.input_time {
+display:inline;
+width:40%;
+}
+
+.fc-day-grid-container {
+height:100% !important;
+}
+
